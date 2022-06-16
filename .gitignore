@@ -15,6 +15,9 @@ doc/api/
 local_settings.py
 db.sqlite3
 
+# Environments
+.env
+
 # Avoid committing generated Javascript files:
 *.dart.js
 *.info.json      # Produced by the --dump-info flag.
