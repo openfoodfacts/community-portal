@@ -35,7 +35,7 @@ class Menu extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Image.asset(
-                'images/logo-s.png',
+                'icons/release_icon_transparent.png',
                 width: 41,
                 height: 65,
               )
@@ -79,22 +79,25 @@ class Body extends StatelessWidget {
                 height: 10,
               ),
               Row(
-                children: const [
-                  Text(
-                    "You can",
-                    style: TextStyle(
-                        color: Colors.black54, fontWeight: FontWeight.bold),
+                children: [
+                  RichText(
+                    text: TextSpan(
+                      text: 'You can',
+                      style: TextStyle(
+                          color: Colors.black54, fontWeight: FontWeight.bold),
+                    ),
                   ),
                   SizedBox(width: 15),
                   Text(
                     "Register here!",
                     style: TextStyle(
-                        color: Color(0xffFF8714), fontWeight: FontWeight.bold),
+                        color: Theme.of(context).primaryColor,
+                        fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
               Image.asset(
-                'images/LOGO.png',
+                'icons/release_icon_with_name_transparent.png',
                 width: 400,
               ),
             ],
@@ -105,29 +108,26 @@ class Body extends StatelessWidget {
               vertical: MediaQuery.of(context).size.height / 6),
           child: SizedBox(
             width: 320,
-            child: _formLogin(),
+            child: _formLogin(context),
           ),
         )
       ],
     );
   }
 
-  Widget _formLogin() {
+  Widget _formLogin(context) {
     return Column(
       children: [
         TextField(
           decoration: InputDecoration(
             hintText: 'Enter email or Phone number',
             filled: true,
-            fillColor: Color(0xffF5F5F5),
             labelStyle: TextStyle(fontSize: 12),
-            contentPadding: EdgeInsets.only(left: 30),
+            contentPadding: EdgeInsetsDirectional.only(start: 30),
             enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Color(0xffFF8714)),
               borderRadius: BorderRadius.circular(15),
             ),
             focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Color(0xffFF8714)),
               borderRadius: BorderRadius.circular(15),
             ),
           ),
@@ -142,15 +142,12 @@ class Body extends StatelessWidget {
               color: Colors.grey,
             ),
             filled: true,
-            fillColor: Color(0xffF5F5F5),
             labelStyle: TextStyle(fontSize: 12),
-            contentPadding: EdgeInsets.only(left: 30),
+            contentPadding: EdgeInsetsDirectional.only(start: 30),
             enabledBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Color(0xffFF8714)),
               borderRadius: BorderRadius.circular(15),
             ),
             focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Color(0xffFF8714)),
               borderRadius: BorderRadius.circular(15),
             ),
           ),
@@ -158,11 +155,11 @@ class Body extends StatelessWidget {
         SizedBox(height: 40),
         Container(
           decoration: BoxDecoration(
-            color: Color(0xffFF8714),
+            color: Theme.of(context).primaryColor,
             borderRadius: BorderRadius.circular(30),
-            boxShadow: const [
+            boxShadow: [
               BoxShadow(
-                color: Color(0xffFF8714),
+                color: Theme.of(context).primaryColor,
                 spreadRadius: 10,
                 blurRadius: 20,
               ),
@@ -171,7 +168,7 @@ class Body extends StatelessWidget {
           child: ElevatedButton(
             onPressed: () => ("it's pressed"),
             style: ElevatedButton.styleFrom(
-              primary: Color(0xffFF8714),
+              primary: Theme.of(context).primaryColor,
               onPrimary: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15),

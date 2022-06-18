@@ -14,8 +14,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Community-portal',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
+            primaryColor: const Color(0xffFF8714),
+            backgroundColor: const Color(0xffFFFFFF),
+            inputDecorationTheme: const InputDecorationTheme(
+              fillColor: Color(0xffF5F5F5),
+            )),
         home: const LoginScreen(),
         debugShowCheckedModeBanner: false);
   }
