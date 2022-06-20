@@ -2,7 +2,7 @@ version: '3'
 
 services:
   server:
-    build: /community_portal
+    build: ./community_portal
     command: bash -c "python community_portal/manage.py makemigrations && python community_portal/manage.py migrate && python community_portal/manage.py runserver 0.0.0.0:8000"
     container_name: community_portal
     volumes:
@@ -10,7 +10,11 @@ services:
     ports:
       - "8000:8000"
   client:
-    build: /client
+    build: ./client
     container_name: client
     volumes:
       - .:/client
+    ports:
+      - "8001:80"
+    environment:
+      - NGINX_PORT=80
