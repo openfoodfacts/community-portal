@@ -9,4 +9,9 @@ services:
       - .:/community_portal
     ports:
       - "8000:8000"
-  
+  client:
+    build: /client
+    command: flutter run -d chrome
+    container_name: client
+    volumes:
+      - .:/client
