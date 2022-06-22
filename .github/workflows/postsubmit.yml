@@ -46,7 +46,7 @@ jobs:
         run: flutter analyze --fatal-infos --fatal-warnings .
       
       # Run tests
-      - name: Run Tests with coverage
+      - name: Run Tests
         run: flutter test .
             
       # Build apk.
