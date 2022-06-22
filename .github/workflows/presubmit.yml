@@ -37,7 +37,7 @@ jobs:
       
       # Run tests
       - name: Run Tests with coverage
-        run: flutter test
+        run: flutter test --coverage
       
       - name: Upload coverage to codecov
         uses: codecov/codecov-action@v3
