@@ -1,0 +1,61 @@
+name: Client Post-Submit Tests
+
+on: 
+  push:
+    branches:
+      - "develop"
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./client
+
+    steps:
+      - name: "Checkout code"
+        uses: actions/checkout@v3
+
+      - name: Setup Java JDK
+        uses: actions/setup-java@v3.3.0
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      
+      # Setup flutter
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+          cache-key: flutter3.0.1 # change this to force refresh cache
+          
+      - run: flutter --version
+      
+      # Get dependencies.
+      - name: Get dependencies
+        run: flutter pub get .
+
+      # Check for formatting issues
+      - name: Check for formatting issues (run "flutter format . ")
+        run: flutter format --set-exit-if-changed .
+      
+      # analyze Dart for errors
+      - name: Analyze code
+        run: flutter analyze --fatal-infos --fatal-warnings .
+      
+      # Run tests
+      - name: Run Tests with coverage
+        run: flutter test .
+            
+      # Build apk.
+      - name: Build APK
+        run: flutter build apk --debug
+      
+      # Upload generated apk to the artifacts.
+      - name: Upload APK
+        uses: actions/upload-artifact@v3
+        with:
+          name: release-apk
+          path: build/app/outputs/flutter-apk/app-debug.apk
