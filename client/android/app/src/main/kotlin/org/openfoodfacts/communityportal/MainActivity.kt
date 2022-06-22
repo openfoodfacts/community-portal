@@ -1,4 +1,4 @@
-package fr.openfoodfacts.communityportal
+package org.openfoodfacts.communityportal
 
 import io.flutter.embedding.android.FlutterActivity
 
