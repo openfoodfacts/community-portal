@@ -1,0 +1,11 @@
+
+
+# Add labels to any any pull request with changes to the specified paths
+flutter:
+- client/**/*
+
+django:
+- community_portal/**/*
+
+devops:
+- .github/**/*
