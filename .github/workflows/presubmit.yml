@@ -37,11 +37,11 @@ jobs:
       
       # Run tests
       - name: Run Tests with coverage
-        run: flutter test --coverage
+        run: flutter test 
       
-      - name: Upload coverage to codecov
-        uses: codecov/codecov-action@v3
-        with:
-          fail_ci_if_error: true
-          verbose: true
+#      - name: Upload coverage to codecov
+#        uses: codecov/codecov-action@v3
+#        with:
+#          fail_ci_if_error: true
+#          verbose: true
 
