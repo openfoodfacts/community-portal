@@ -1,4 +1,5 @@
 import 'package:client/Screens/login/login_screen.dart';
+import 'package:client/themes/theme_constants.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,12 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'Community-portal',
-        theme: ThemeData(
-            primaryColor: const Color(0xffFF8714),
-            backgroundColor: const Color(0xffFFFFFF),
-            inputDecorationTheme: const InputDecorationTheme(
-              fillColor: Color(0xffF5F5F5),
-            )),
+        theme: lightTheme,
         home: const LoginScreen(),
         debugShowCheckedModeBanner: false);
   }
