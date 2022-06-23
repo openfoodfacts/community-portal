@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -8,7 +6,6 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffFFFFFF),
       body: ListView(
         padding: EdgeInsets.symmetric(
             horizontal: MediaQuery.of(context).size.width / 8),
@@ -29,17 +26,12 @@ class Menu extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 30),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Image.asset(
-                'icons/release_icon_transparent.png',
-                width: 41,
-                height: 65,
-              )
-            ],
+          Image.asset(
+            'icons/release_icon_transparent.png',
+            width: 41,
+            height: 65,
           ),
         ],
       ),
@@ -52,6 +44,7 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextTheme texttheme = Theme.of(context).textTheme;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -62,34 +55,22 @@ class Body extends StatelessWidget {
             children: [
               Text(
                 '   Sign In to the\nCommunity Portal',
-                style: TextStyle(
-                  fontSize: 45,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(
-                height: null,
+                style: texttheme.headline1,
               ),
               Text(
                 "If you don't have an account",
-                style: TextStyle(
-                    color: Colors.black54, fontWeight: FontWeight.bold),
-              ),
-              SizedBox(
-                height: 10,
+                style: texttheme.subtitle2,
               ),
               Row(
                 children: [
                   RichText(
                     text: TextSpan(
                       text: 'You can',
-                      style: TextStyle(
-                          color: Colors.black54, fontWeight: FontWeight.bold),
+                      style: texttheme.subtitle2,
                     ),
                   ),
-                  SizedBox(width: 15),
                   Text(
-                    "Register here!",
+                    ' Register here!',
                     style: TextStyle(
                         color: Theme.of(context).primaryColor,
                         fontWeight: FontWeight.bold),
@@ -110,7 +91,7 @@ class Body extends StatelessWidget {
             width: 320,
             child: _formLogin(context),
           ),
-        )
+        ),
       ],
     );
   }
@@ -118,69 +99,46 @@ class Body extends StatelessWidget {
   Widget _formLogin(context) {
     return Column(
       children: [
-        TextField(
+        const TextField(
           decoration: InputDecoration(
             hintText: 'Enter email or Phone number',
-            filled: true,
             labelStyle: TextStyle(fontSize: 12),
-            contentPadding: EdgeInsetsDirectional.only(start: 30),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15),
-            ),
           ),
         ),
-        SizedBox(height: 30),
-        TextField(
+        const SizedBox(height: 30),
+        const TextField(
           decoration: InputDecoration(
             hintText: 'Password',
             counterText: 'Forgot password?',
             suffixIcon: Icon(
               Icons.visibility_off_outlined,
-              color: Colors.grey,
             ),
-            filled: true,
             labelStyle: TextStyle(fontSize: 12),
-            contentPadding: EdgeInsetsDirectional.only(start: 30),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15),
-            ),
           ),
         ),
-        SizedBox(height: 40),
+        const SizedBox(
+          height: 40,
+        ),
         Container(
           decoration: BoxDecoration(
             color: Theme.of(context).primaryColor,
             borderRadius: BorderRadius.circular(30),
-            boxShadow: [
-              BoxShadow(
-                color: Theme.of(context).primaryColor,
-                spreadRadius: 10,
-                blurRadius: 20,
-              ),
-            ],
           ),
           child: ElevatedButton(
             onPressed: () => ("it's pressed"),
             style: ElevatedButton.styleFrom(
-              primary: Theme.of(context).primaryColor,
               onPrimary: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15),
               ),
             ),
-            child: SizedBox(
+            child: const SizedBox(
                 width: double.infinity,
                 height: 50,
-                child: Center(child: Text("Sign In"))),
+                child: Center(child: Text('Sign In'))),
           ),
         ),
-        SizedBox(height: 40),
+        const SizedBox(height: 40),
       ],
     );
   }
