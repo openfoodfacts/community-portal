@@ -1,3 +1,4 @@
+import 'package:client/constants/resources.dart';
 import 'package:client/themes/theme_constants.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,7 @@ class CustomloginHeader extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Image.asset(
-            'icons/release_icon_transparent.png',
+            Resources.icon,
             width: 41,
             height: 45,
           ),
