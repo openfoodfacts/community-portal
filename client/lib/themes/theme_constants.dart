@@ -5,6 +5,7 @@ Color onprimary = const Color(0xFF000000);
 Color secondary = const Color(0xFFF5F5F5);
 Color onsecondary = const Color(0xFFFFFFFF);
 Color background = const Color(0xFFFFFFFF);
+const apppadding = 16.0;
 
 ThemeData lightTheme = ThemeData(
   brightness: Brightness.light,
