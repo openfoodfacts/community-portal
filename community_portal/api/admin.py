@@ -1,3 +1,6 @@
-from django.contrib import admin
+from django.contrib import admin 
+from api.models import Community_groups
 
-# Register your models here.
+@admin.register(Community_groups)
+class GroupsModelAdmin(admin.ModelAdmin):
+    list_display = ['id', 'group_name','description','country','category']
