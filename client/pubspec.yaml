@@ -14,6 +14,8 @@ dependencies:
 
   # TODO Remove this dependency
   cupertino_icons: ^1.0.5
+  responsive_builder: ^0.4.2
+  flutter_svg: ^1.1.1+1
 
 dev_dependencies:
   flutter_test:
