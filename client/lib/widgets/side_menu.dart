@@ -1,8 +1,7 @@
+import 'package:client/constants/color_constants.dart';
 import 'package:client/constants/resources.dart';
 import 'package:client/themes/theme_constants.dart';
-
 import 'package:client/widgets/side_menu_items.dart';
-
 import 'package:flutter/material.dart';
 
 class SideMenu extends StatelessWidget {
@@ -11,7 +10,7 @@ class SideMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: primary,
+      backgroundColor: ColorConstants.primary,
       child: ListView(
         children: [
           Container(
@@ -46,7 +45,7 @@ class SideMenu extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: appPadding * 2),
             child: Divider(
-              color: secondary,
+              color: ColorConstants.secondary,
               thickness: 0.2,
             ),
           ),

@@ -39,9 +39,7 @@ AppBar topNavigationBar(BuildContext context, GlobalKey<ScaffoldState> key) =>
             ),
             child: const Text('Open Food Facts'),
           ),
-          Expanded(
-            child: Container(),
-          ),
+          const Spacer(),
           IconButton(
             icon: const Icon(
               Icons.search,

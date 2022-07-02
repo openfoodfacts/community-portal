@@ -1,4 +1,4 @@
-import 'package:client/themes/theme_constants.dart';
+import 'package:client/constants/color_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -25,7 +25,7 @@ class SideMenuList extends StatelessWidget {
       ),
       title: Text(
         title,
-        style: const TextStyle(color: onprimary),
+        style: const TextStyle(color: ColorConstants.onPrimary),
       ),
     );
   }
