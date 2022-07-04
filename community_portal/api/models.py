@@ -2,9 +2,11 @@ from django.db import models
 from io import BytesIO
 from PIL import Image
 from django.core.files import File
+from django.contrib.auth.models import User
 
 class Group(models.Model):
     name = models.CharField(max_length=50,null=False)
+    creator = models.ForeignKey(User, on_delete=models.CASCADE) 
     description = models.TextField(blank=False, null=True)
     country = models.CharField(max_length=50)
     image = models.ImageField(upload_to='uploads/', blank=True, null=True)
@@ -49,3 +51,4 @@ class Group(models.Model):
         thumbnail = File(thumb_io, name=image.name)
 
         return thumbnail
+

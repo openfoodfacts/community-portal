@@ -8,6 +8,7 @@ class GroupSerializer(serializers.ModelSerializer):
         fields = (
             "id",
             "name",
+            "creator",
             "get_absolute_url",
             "description",
             "country",
