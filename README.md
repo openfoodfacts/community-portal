@@ -3,6 +3,8 @@
 # Open Food Facts Community Portal
 <b> A community portal for our organization contributors </b> 😄
 
+IMPORTANT NOTE: This project (originally a GSoC project) is dormant, since it was too large and too ambitious (it amounts to implementing a full social network). Please don't invest time fixing it before we rescope it.
+
 
 
 ## Useful links
