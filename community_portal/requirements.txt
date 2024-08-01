@@ -3,5 +3,5 @@ Django==4.0.5
 djangorestframework==3.13.1
 python-dotenv==0.21.0
 pytz==2024.1
-sqlparse==0.4.3
+sqlparse==0.5.1
 tzdata==2023.3
